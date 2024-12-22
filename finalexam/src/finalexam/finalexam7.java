@@ -3,15 +3,29 @@ package finalexam;
 import java.io.*;
 import java.util.*;
 
-public class finalexam6 {
+public class finalexam7 {
+
+    private static final String USER_CREDENTIALS_FILE = "user_credentials.properties";  // 아이디와 비밀번호를 저장할 파일
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
 
-        Map<String, String> responseMap = new LinkedHashMap<>();
+        if (tryAutoLogin(scanner)) {
+            System.out.println("자동 로그인에 성공했습니다.");
+        } else {
+            System.out.println("자동 로그인 실패. 새로 로그인 정보를 입력합니다.");
 
+            System.out.print("아이디를 입력하세요: ");
+            String username = scanner.nextLine();
+            System.out.print("비밀번호를 입력하세요: ");
+            String password = scanner.nextLine();
+
+            saveCredentials(username, password);
+        }
+
+
+        Map<String, String> responseMap = new LinkedHashMap<>();
 
         System.out.println("이름: ");
         String name = scanner.nextLine();
@@ -41,12 +55,55 @@ public class finalexam6 {
     }
 
 
+    private static void saveCredentials(String username, String password) {
+        Properties properties = new Properties();
+        properties.setProperty("username", username);
+        properties.setProperty("password", password);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_CREDENTIALS_FILE))) {
+            properties.store(writer, null);
+            System.out.println("로그인 정보가 저장되었습니다.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static boolean tryAutoLogin(Scanner scanner) {
+        File credentialsFile = new File(USER_CREDENTIALS_FILE);
+        if (!credentialsFile.exists()) {
+            return false;
+        }
+
+        Properties properties = new Properties();
+        try (BufferedReader reader = new BufferedReader(new FileReader(credentialsFile))) {
+            properties.load(reader);
+            String username = properties.getProperty("username");
+            String password = properties.getProperty("password");
+
+
+            System.out.print("아이디를 입력하세요: ");
+            String inputUsername = scanner.nextLine();
+            System.out.print("비밀번호를 입력하세요: ");
+            String inputPassword = scanner.nextLine();
+
+            if (username.equals(inputUsername) && password.equals(inputPassword)) {
+                return true;
+            } else {
+                System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
     private static void saveResponse(Map<String, String> responseMap) {
         String userHome = System.getProperty("user.home");
-        String filePath = userHome + "\\Desktop\\survey_responses.txt"; // 응답을 저장할 파일 경로
+        String filePath = userHome + "\\Desktop\\survey_responses.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, true), "UTF-8"))) {
-
             for (Map.Entry<String, String> entry : responseMap.entrySet()) {
                 writer.write(entry.getKey() + ": " + entry.getValue());
                 writer.newLine();
@@ -72,7 +129,6 @@ public class finalexam6 {
             while ((line = reader.readLine()) != null) {
                 responses.add(line);
             }
-
 
             for (String response : responses) {
                 String summary = summarizeResponse(response);
@@ -100,6 +156,3 @@ public class finalexam6 {
         return summary.toString().trim();
     }
 }
-
-
-
