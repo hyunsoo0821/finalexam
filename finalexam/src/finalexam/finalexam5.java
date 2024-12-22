@@ -2,24 +2,23 @@ package finalexam;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class finalexam4 extends JFrame {
-    JTextField t1;
+public class finalexam5 extends JFrame {
 
-    finalexam4() {
+    JTextArea nameField, genderField, issueSummaryField, issueDetailField, solutionField;
+    JTextArea focusedField;
+
+    finalexam5() {
         setTitle("설문조사");
         setLayout(new BorderLayout(10, 10));
         makeMenu();
         showNorth();
-        showCenter();
+
         showSouth();
 
         getContentPane().setBackground(Color.WHITE);
@@ -27,15 +26,9 @@ public class finalexam4 extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 500);
         setVisible(true);
-
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                handleKeyPress(e);
-            }
-        });
     }
 
+    // 메뉴 바 만들기
     void makeMenu() {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(Color.WHITE);
@@ -75,6 +68,7 @@ public class finalexam4 extends JFrame {
         setJMenuBar(menuBar);
     }
 
+
     void saveToFile() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("파일 저장");
@@ -84,13 +78,18 @@ public class finalexam4 extends JFrame {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToSave = fileChooser.getSelectedFile();
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileToSave))) {
-                writer.write(t1.getText());
+                writer.write("이름: " + nameField.getText() + "\n");
+                writer.write("성별: " + genderField.getText() + "\n");
+                writer.write("불편 사항(요약): " + issueSummaryField.getText() + "\n");
+                writer.write("불편 사항(상세): " + issueDetailField.getText() + "\n");
+                writer.write("해결 방안: " + solutionField.getText() + "\n");
                 JOptionPane.showMessageDialog(this, "파일이 저장되었습니다: " + fileToSave.getAbsolutePath());
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "파일 저장 중 오류가 발생했습니다: " + ex.getMessage());
             }
         }
     }
+
 
     void showNorth() {
         JPanel p1 = new JPanel();
@@ -102,57 +101,70 @@ public class finalexam4 extends JFrame {
         p1.add(nameField);
 
         p1.add(new JLabel("성별: "));
-        JTextField genderField = new JTextField(10);
-        p1.add(genderField);
+        genderField = new JTextArea(2, 10);
+        genderField.setWrapStyleWord(true);
+        genderField.setLineWrap(true);
+        genderField.addFocusListener(new FocusListener());
+        JScrollPane genderScroll = new JScrollPane(genderField);
+        p1.add(genderScroll);
 
         p1.add(new JLabel("청주대에 다니면서 시설 관련된 불편했던 점 (사람 특정은 제외 부탁드립니다, 요약을 먼저 쓰신후 설명 부탁드립니다): "));
-        JTextField issueSummaryField = new JTextField( 10);
-        p1.add(issueSummaryField);
+        issueSummaryField = new JTextArea(2, 10);
+        issueSummaryField.setWrapStyleWord(true);
+        issueSummaryField.setLineWrap(true);
+        issueSummaryField.addFocusListener(new FocusListener());
+        JScrollPane issueSummaryScroll = new JScrollPane(issueSummaryField);
+        p1.add(issueSummaryScroll);
 
         p1.add(new JLabel("어떤 점이 불편했는지 상세히 설명 부탁드립니다,(요약을 먼저 쓰신후 설명 부탁드립니다): "));
-        JTextField issueDetailField = new JTextField( 10);
-        p1.add(issueDetailField);
+        issueDetailField = new JTextArea(2, 10);
+        issueDetailField.setWrapStyleWord(true);
+        issueDetailField.setLineWrap(true);
+        issueDetailField.addFocusListener(new FocusListener());
+        JScrollPane issueDetailScroll = new JScrollPane(issueDetailField);
+        p1.add(issueDetailScroll);
 
         p1.add(new JLabel("불편했던 사항을 해결 방안에 대해 의견을 적어주십시오 예) 길가에 음성표지판을 두어 이곳에 블랙아이스가 있으니 사람이 오면 들을 수 있게 한다.(요약을 먼저 쓰신후 설명 부탁드립니다): "));
-        JTextField solutionField = new JTextField( 10);
-        p1.add(solutionField);
+
+        solutionField = new JTextArea(2, 10);
+        solutionField.setWrapStyleWord(true);
+        solutionField.setLineWrap(true);
+        solutionField.addFocusListener(new FocusListener());
+        JScrollPane solutionScroll = new JScrollPane(solutionField);
+        p1.add(solutionScroll);
 
         this.add(p1, BorderLayout.NORTH);
     }
 
-    void showCenter() {
-        JPanel panel = new JPanel();
-        panel.setBackground(Color.WHITE);
-        panel.setLayout(new FlowLayout());
-
-        Dimension buttonSize = new Dimension(50, 30);
-
-        JButton clearButton = new JButton("C");
-        clearButton.setPreferredSize(buttonSize);
-        clearButton.setBackground(Color.GRAY);
-        clearButton.addActionListener(e -> t1.setText(""));
-        panel.add(clearButton);
-
-        this.add(panel, BorderLayout.CENTER);
+    void clearTextAreas() {
+        nameField.setText("");
+        genderField.setText("");
+        issueSummaryField.setText("");
+        issueDetailField.setText("");
+        solutionField.setText("");
     }
+
 
     void showSouth() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(5, 5, 10, 10));
+
+        JPanel buttonPanel = new JPanel(new GridLayout(5, 4, 10, 10));  // 5x4 그리드 레이아웃
         buttonPanel.setBackground(Color.WHITE);
 
+
         String[] buttonLabels = {
-                "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ",
-                "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ",
-                "ㅋ", "ㅌ", "ㅍ", "ㅎ"
+                "남자","여자",
+                "주차장 편의", "길가 문제","뜨거운물 사용","교내 셔틀 전광판 설치","자리마다 콘센트 설치"
+
         };
+
 
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setBackground(Color.GRAY);
-            button.addActionListener(new ButtonClickListener());
+            button.addActionListener(new ButtonClickListener());  // 버튼 클릭 시 텍스트를 추가하는 리스너
             buttonPanel.add(button);
         }
 
@@ -160,35 +172,35 @@ public class finalexam4 extends JFrame {
         this.add(panel, BorderLayout.SOUTH);
     }
 
-    void handleKeyPress(KeyEvent e) {
-        char keyChar = e.getKeyChar();
-        switch (keyChar) {
-            case 'ㄱ': case 'ㄴ': case 'ㄷ': case 'ㄹ':
-            case 'ㅁ': case 'ㅂ': case 'ㅅ': case 'ㅇ':
-            case 'ㅈ': case 'ㅊ': case 'ㅋ': case 'ㅌ':
-            case 'ㅍ': case 'ㅎ':
-                t1.setText(t1.getText() + keyChar);
-                break;
-            case KeyEvent.VK_BACK_SPACE:
-                String text = t1.getText();
-                if (!text.isEmpty()) {
-                    t1.setText(text.substring(0, text.length() - 1));
-                }
-                break;
-        }
-    }
 
     class ButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton source = (JButton) e.getSource();
             String text = source.getText();
-            t1.setText(t1.getText() + text);
+
+            if (focusedField != null) {
+                focusedField.append(text);
+            }
+        }
+    }
+
+
+    class FocusListener implements java.awt.event.FocusListener {
+        @Override
+        public void focusGained(FocusEvent e) {
+            focusedField = (JTextArea) e.getSource();
+        }
+
+        @Override
+        public void focusLost(FocusEvent e) {
+
         }
     }
 
     public static void main(String[] args) {
-        new finalexam4();
+        new finalexam5();
     }
 }
+
 
