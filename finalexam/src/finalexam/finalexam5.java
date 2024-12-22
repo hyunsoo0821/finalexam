@@ -10,7 +10,8 @@ import java.io.IOException;
 
 public class finalexam5 extends JFrame {
 
-    JTextField nameField; // nameField를 JTextField로 선언
+    // Declare all JTextField and JTextArea components at the class level
+    JTextField nameField;
     JTextArea genderField, issueSummaryField, issueDetailField, solutionField;
     JTextArea focusedField;
 
@@ -41,7 +42,7 @@ public class finalexam5 extends JFrame {
         newFileItem.setBackground(Color.WHITE);
 
         JMenuItem saveFileItem = new JMenuItem("파일 저장하기");
-        saveFileItem.addActionListener(e -> saveToFile()); // 파일 저장 시 saveToFile() 호출
+        saveFileItem.addActionListener(e -> saveToFile());  // Save function will be triggered here
         saveFileItem.setBackground(Color.WHITE);
 
         JMenuItem exitItem = new JMenuItem("종료");
@@ -67,7 +68,6 @@ public class finalexam5 extends JFrame {
         setJMenuBar(menuBar);
     }
 
-    // 파일 저장 기능
     void saveToFile() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("파일 저장");
@@ -77,6 +77,7 @@ public class finalexam5 extends JFrame {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToSave = fileChooser.getSelectedFile();
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileToSave))) {
+                // Write the content from the JTextField and JTextArea components
                 writer.write("이름: " + nameField.getText() + "\n");
                 writer.write("성별: " + genderField.getText() + "\n");
                 writer.write("불편 사항(요약): " + issueSummaryField.getText() + "\n");
@@ -89,14 +90,13 @@ public class finalexam5 extends JFrame {
         }
     }
 
-    // 북쪽 패널 구성
     void showNorth() {
         JPanel p1 = new JPanel();
         p1.setBackground(Color.WHITE);
         p1.setLayout(new GridLayout(5, 1, 10, 10));
 
         p1.add(new JLabel("이름: "));
-        nameField = new JTextField(10); // nameField를 클래스 변수로 수정
+        nameField = new JTextField(10);  // Initialize nameField as a JTextField
         p1.add(nameField);
 
         p1.add(new JLabel("성별: "));
@@ -107,7 +107,7 @@ public class finalexam5 extends JFrame {
         JScrollPane genderScroll = new JScrollPane(genderField);
         p1.add(genderScroll);
 
-        p1.add(new JLabel("청주대에 다니면서 시설 관련된 불편했던 점 (사람 특정은 제외 부탁드립니다, 요약을 먼저 쓰신 후 설명 부탁드립니다): "));
+        p1.add(new JLabel("청주대에 다니면서 시설 관련된 불편했던 점 (사람 특정은 제외 부탁드립니다, 요약을 먼저 쓰신후 설명 부탁드립니다): "));
         issueSummaryField = new JTextArea(2, 10);
         issueSummaryField.setWrapStyleWord(true);
         issueSummaryField.setLineWrap(true);
@@ -115,7 +115,7 @@ public class finalexam5 extends JFrame {
         JScrollPane issueSummaryScroll = new JScrollPane(issueSummaryField);
         p1.add(issueSummaryScroll);
 
-        p1.add(new JLabel("어떤 점이 불편했는지 상세히 설명 부탁드립니다,(요약을 먼저 쓰신 후 설명 부탁드립니다): "));
+        p1.add(new JLabel("어떤 점이 불편했는지 상세히 설명 부탁드립니다,(요약을 먼저 쓰신후 설명 부탁드립니다): "));
         issueDetailField = new JTextArea(2, 10);
         issueDetailField.setWrapStyleWord(true);
         issueDetailField.setLineWrap(true);
@@ -123,8 +123,7 @@ public class finalexam5 extends JFrame {
         JScrollPane issueDetailScroll = new JScrollPane(issueDetailField);
         p1.add(issueDetailScroll);
 
-        p1.add(new JLabel("불편했던 사항을 해결 방안에 대해 의견을 적어주십시오 예) 길가에 음성표지판을 두어 이곳에 블랙아이스가 있으니 사람이 오면 들을 수 있게 한다.(요약을 먼저 쓰신 후 설명 부탁드립니다): "));
-
+        p1.add(new JLabel("불편했던 사항을 해결 방안에 대해 의견을 적어주십시오 예) 길가에 음성표지판을 두어 이곳에 블랙아이스가 있으니 사람이 오면 들을 수 있게 한다.(요약을 먼저 쓰신후 설명 부탁드립니다): "));
         solutionField = new JTextArea(2, 10);
         solutionField.setWrapStyleWord(true);
         solutionField.setLineWrap(true);
@@ -143,7 +142,6 @@ public class finalexam5 extends JFrame {
         solutionField.setText("");
     }
 
-    // 하단 버튼들
     void showSouth() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);
@@ -152,14 +150,14 @@ public class finalexam5 extends JFrame {
         buttonPanel.setBackground(Color.WHITE);
 
         String[] buttonLabels = {
-                "남자","여자",
-                "주차장 편의", "길가 문제","뜨거운물 사용","교내 셔틀 전광판 설치","자리마다 콘센트 설치"
+                "남자", "여자",
+                "주차장 편의", "길가 문제", "뜨거운물 사용", "교내 셔틀 전광판 설치", "자리마다 콘센트 설치"
         };
 
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setBackground(Color.GRAY);
-            button.addActionListener(new ButtonClickListener());  // 버튼 클릭 시 텍스트를 추가하는 리스너
+            button.addActionListener(new ButtonClickListener());
             buttonPanel.add(button);
         }
 
@@ -187,6 +185,7 @@ public class finalexam5 extends JFrame {
 
         @Override
         public void focusLost(FocusEvent e) {
+
         }
     }
 
@@ -194,5 +193,6 @@ public class finalexam5 extends JFrame {
         new finalexam5();
     }
 }
+
 
 

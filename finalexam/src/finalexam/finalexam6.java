@@ -43,7 +43,7 @@ public class finalexam6 {
 
     private static void saveResponse(Map<String, String> responseMap) {
         String userHome = System.getProperty("user.home");
-        String filePath = userHome + "\\Desktop\\survey_responses.txt"; // 응답을 저장할 파일 경로
+        String filePath = userHome + "\\Desktop\\survey_responses.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, true), "UTF-8"))) {
 
