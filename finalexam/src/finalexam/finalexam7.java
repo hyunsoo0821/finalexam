@@ -5,7 +5,7 @@ import java.util.*;
 
 public class finalexam7 {
 
-    private static final String USER_CREDENTIALS_FILE = "user_credentials.properties";  // 아이디와 비밀번호를 저장할 파일
+    private static final String USER_CREDENTIALS_FILE = "user_credentials.properties";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

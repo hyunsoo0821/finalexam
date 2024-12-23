@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class finalexam5 extends JFrame {
 
-    // Declare all JTextField and JTextArea components at the class level
+
     JTextField nameField;
     JTextArea genderField, issueSummaryField, issueDetailField, solutionField;
     JTextArea focusedField;
@@ -42,7 +42,7 @@ public class finalexam5 extends JFrame {
         newFileItem.setBackground(Color.WHITE);
 
         JMenuItem saveFileItem = new JMenuItem("파일 저장하기");
-        saveFileItem.addActionListener(e -> saveToFile());  // Save function will be triggered here
+        saveFileItem.addActionListener(e -> saveToFile());
         saveFileItem.setBackground(Color.WHITE);
 
         JMenuItem exitItem = new JMenuItem("종료");
@@ -96,7 +96,7 @@ public class finalexam5 extends JFrame {
         p1.setLayout(new GridLayout(5, 1, 10, 10));
 
         p1.add(new JLabel("이름: "));
-        nameField = new JTextField(10);  // Initialize nameField as a JTextField
+        nameField = new JTextField(10);
         p1.add(nameField);
 
         p1.add(new JLabel("성별: "));
@@ -146,7 +146,7 @@ public class finalexam5 extends JFrame {
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(5, 4, 10, 10));  // 5x4 그리드 레이아웃
+        JPanel buttonPanel = new JPanel(new GridLayout(5, 4, 10, 10));
         buttonPanel.setBackground(Color.WHITE);
 
         String[] buttonLabels = {
