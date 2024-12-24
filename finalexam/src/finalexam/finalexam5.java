@@ -9,11 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class finalexam5 extends JFrame {
-
-
-    JTextField nameField;
     JTextArea genderField, issueSummaryField, issueDetailField, solutionField;
-    JTextArea focusedField;
+    JTextArea focusedField, nameField;;
 
     finalexam5() {
         setTitle("설문조사");
@@ -96,7 +93,7 @@ public class finalexam5 extends JFrame {
         p1.setLayout(new GridLayout(5, 1, 10, 10));
 
         p1.add(new JLabel("이름: "));
-        nameField = new JTextField(10);
+        nameField = new JTextArea(2,10);
         p1.add(nameField);
 
         p1.add(new JLabel("성별: "));
