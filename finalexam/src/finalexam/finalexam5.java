@@ -74,7 +74,7 @@ public class finalexam5 extends JFrame {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToSave = fileChooser.getSelectedFile();
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileToSave))) {
-                // Write the content from the JTextField and JTextArea components
+
                 writer.write("이름: " + nameField.getText() + "\n");
                 writer.write("성별: " + genderField.getText() + "\n");
                 writer.write("불편 사항(요약): " + issueSummaryField.getText() + "\n");
@@ -131,13 +131,7 @@ public class finalexam5 extends JFrame {
         this.add(p1, BorderLayout.NORTH);
     }
 
-    void clearTextAreas() {
-        nameField.setText("");
-        genderField.setText("");
-        issueSummaryField.setText("");
-        issueDetailField.setText("");
-        solutionField.setText("");
-    }
+
 
     void showSouth() {
         JPanel panel = new JPanel();
@@ -148,7 +142,7 @@ public class finalexam5 extends JFrame {
 
         String[] buttonLabels = {
                 "남자", "여자",
-                "주차장 편의", "길가 문제", "뜨거운물 사용", "교내 셔틀 전광판 설치", "자리마다 콘센트 설치"
+                "주차장 자리 문제", "길가 문제", "뜨거운물 사용", "교내 셔틀 전광판 문제"
         };
 
         for (String label : buttonLabels) {
