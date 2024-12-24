@@ -19,9 +19,12 @@
 > > ## 두번째는 중간고사 계산기 코드를 사용했습니다. Textfild보다 TextArea를 쓴이유는 TextArea가 키보드 입력도 가능하고 버튼 클릭 리스너입력을 받을수있기 때문입니다 Textfield는 버튼리스너를 사용할 수 없어 사용하지 않았습니다.
 > > >### 세번째는 설문조사 결과중 제일 많이 선택한 주차자리문제를 주차자리 현황판 코드로 해결문제를 하기위해 만들어 보았습니다. 그이유는 거의 주차자리문제관해 주차 요금이나 주차자리 주차 가능한 공간이 있는지 없는지 확인이 안되어 차를 뺑뺑 돈 기억이 많다는 응답이 많아 해결책으로 주차자리 현황판코드를 짜보았습니다.  
 # 3.2 클래스 다이어그램 
-![프로그램 클래스다이어그램 (4)](https://github.com/user-attachments/assets/aec603ca-6d85-495e-9bed-5b483c0aeb01)
+![프로그램 클래스다이어그램 (5)](https://github.com/user-attachments/assets/bfe5126c-9a93-4d57-b078-209f89a2cffb)
+
 # 3.3 프로그램 절차
+# 중간고사 계산기 활용 설문조사 내용 코드
 ![KakaoTalk_20241224_153450843](https://github.com/user-attachments/assets/7bc34466-8598-47c5-86a7-5bd8f9900205)
+# 설문조사 해결방법 주차장 자리 현황판 코드
 ![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/615b599b-3cc1-483e-b065-2566c90ca4db)
 ![스크린샷 2024-12-24 155917](https://github.com/user-attachments/assets/0581b957-7ca5-4492-89ca-50260675fd61)
 ![스크린샷 2024-12-24 155847](https://github.com/user-attachments/assets/5bad64c5-b5b6-4640-ba5c-1c6f8326758c)
