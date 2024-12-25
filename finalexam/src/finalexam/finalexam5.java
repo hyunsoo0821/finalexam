@@ -131,8 +131,6 @@ public class finalexam5 extends JFrame {
         this.add(p1, BorderLayout.NORTH);
     }
 
-
-
     void showSouth() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);

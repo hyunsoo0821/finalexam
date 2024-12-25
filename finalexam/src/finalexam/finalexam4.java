@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class finalexam4 extends JFrame {
     JTextField t1;
-
     finalexam4() {
         setTitle("설문조사");
         setLayout(new BorderLayout(10, 10));
