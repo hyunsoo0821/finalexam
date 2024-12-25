@@ -85,7 +85,6 @@ public class finalexam6 {
             e.printStackTrace();
         }
     }
-
     private static String summarizeResponse(String response) {
         String[] words = response.split(" ");
         if (words.length <= 10) {

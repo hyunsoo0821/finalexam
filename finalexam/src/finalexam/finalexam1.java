@@ -50,7 +50,6 @@ public class finalexam1 {
         System.out.println("불편했던 사항을 해결 방안에 대해 의견을 적어주십시오 예) 길가에 음성표지판을 두어 이곳에 블랙아이스가 있으니 사람이 오면 들을 수 있게 한다.: ");
         String solution = scanner.nextLine();
 
-
         saveResponse(name, gender, inconvenience, details, solution);
     }
 }

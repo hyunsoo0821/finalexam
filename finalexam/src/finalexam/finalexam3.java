@@ -19,7 +19,7 @@ public class finalexam3 {
                 responses.add(line);
             }
 
-            // Summarize responses
+
             for (String response : responses) {
                 String summary = summarizeResponse(response);
                 writer.write(summary);
