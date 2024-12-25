@@ -22,7 +22,7 @@
 # 3.2 클래스 다이어그램 
 ![프로그램 클래스다이어그램 (6)](https://github.com/user-attachments/assets/7c1a79c6-822b-4ed8-b53b-150d0ee0949c)
 ![제목 없는 다이어그램](https://github.com/user-attachments/assets/686aadef-bbc4-4f9a-bbcb-ee7e7d64f2db)
-> # 이미지가 안보이신다면 위에 파일을 올려놨으니 프로그램 클래스 다이어그램 이미지 파일을 눌르시고 보셔도 됩니다.
+> # 이미지가 안보이신다면 위에 파일을 올려놨으니 프로그램 클래스 다이어그램 이미지 파일을 누르시고 보시면 됩니다.
 # 3.3 프로그램 절차
 # 기말고사 내용 활용 프로그램코드 컬랙션3개 파일입출력 코드 사용 
 ![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/615b599b-3cc1-483e-b065-2566c90ca4db)
