@@ -1,20 +1,20 @@
 # 1.개요
 ## 1.1 목적, 주제선정이유(기초 틀) 
-![기말고사 설계 (7)](https://github.com/user-attachments/assets/2067da39-fa01-44a8-ad83-99a8632291c2)
+![기말고사 설계](https://github.com/user-attachments/assets/2f9a67d0-194f-406c-8da4-44a2f858c60f)
 >**먼저 설문조사 양식을 여러 사이트를 보고 참고하여 만들었습니다**
 > >## 그중 구글폼을 참고하여 설문조사코드를 만들어 보았으며 
 > > >### 중간고사 계산기코드를 참고하여 만든 설문조사코드도 만들어 보았습니다.
 > > > >#### 설문조사 종류를 2가지 한이유는 중간고사 계산기코드랑 연관지어 할 수 있어서 궁금하여 참고하면서 코드를 만들고 싶었고 어떻게 나올지 궁금해서 만들었습니다. 또한 홈페이지 html로 만든다면 이렇게도 만들수 있어서 만들었습니다.(요약: 설문조사 종류를 많이 해보고 싶었습니다)
 ## 1.2  대상
-![스크린샷 2024-12-24 101927](https://github.com/user-attachments/assets/12282712-23f1-4575-83b7-5799a2ad63eb)
+![스크린샷 2024-12-24 101927](https://github.com/user-attachments/assets/eb968d76-aea5-4e91-94df-67b83ffda4b5)
 >**대상: 청주대학교 8명중 남자 5명, 여자3명 입니다**
 # 2. 중요성과 필요성 
-![KakaoTalk_20241224_143428396](https://github.com/user-attachments/assets/f3f1b3bc-d182-4355-9c63-b6a405d21ad4)
+![KakaoTalk_20241224_143428396](https://github.com/user-attachments/assets/bf8d8e6f-7248-41dd-b0ea-5f5ef6d87427)
 >**청주대학교 8명 대상 설문조사 결과**
 > >## 설문조사결과 8명중 4명이 주차장관련 자리 문제에 대해 고민이 많았고
 > > >### 이에 대해 해결문제로 주차장 자리 현황판을 만들어보았습니다
 # 3.1 프로그램 수행 절차 설계 다이어그램 
-![기말고사 구동 설계도](https://github.com/user-attachments/assets/af9b59b4-ea0c-4566-9ab8-aa7fd3522c71)
+![기말고사 구동 설계도](https://github.com/user-attachments/assets/6c6c0208-f437-4aec-9cb7-2c98e010c428)
 ># 첫번째는 기말고사까지 배웠던내용을 가지고 프로그램을 구현 했으며 컬렉션 프레임워크(컬랙션 3개)및 파일 입출력 코드를 사용 했습니다.
 > > ## 두번째는 중간고사 계산기 코드를 사용했습니다. Textfild보다 TextArea를 쓴이유는 TextArea가 키보드 입력도 가능하고 버튼 클릭 리스너입력을 받을수있기 때문입니다 Textfield는 버튼리스너를 사용할 수 없어 사용하지 않았습니다.
 > > >### 세번째는 설문조사 결과중 제일 많이 선택한 주차자리문제를 주차자리 현황판 코드로 해결문제를 하기위해 만들어 보았습니다.
@@ -22,13 +22,13 @@
 # 3.2 클래스 다이어그램 
 ># 첫번째가 중간고사 계산기 내용 참고하여 만든 설문조사 클래스 다이어그램이며
 > >## 두번째가 기말고사 내용 참고하여 컬랙션프레임워크와 파일입출력을 활용한 설문조사 클래스 다이어그램입니다
-![프로그램 클래스다이어그램 (9)](https://github.com/user-attachments/assets/ab916cb9-ba0c-448a-bc5b-7d211142a202)
+![프로그램 클래스다이어그램 (9)](https://github.com/user-attachments/assets/230569ce-2dff-4593-b3e4-b3d80ae6ca15)
 ># 아래 사진은 설문조사 결과 해결방법으로 주차장자리현황판 코드입니다 
-![제목 없는 다이어그램](https://github.com/user-attachments/assets/686aadef-bbc4-4f9a-bbcb-ee7e7d64f2db)
+![제목 없는 다이어그램](https://github.com/user-attachments/assets/446f51e3-2d47-4ccc-bc8b-0d7a7e2544ba)
 > # 이미지가 안보이신다면 위에 파일을 올려놨으니 프로그램 클래스 다이어그램 이미지 파일을 누르시고 보시면 됩니다.
 # 3.3 프로그램 절차
 # 기말고사 내용 활용 프로그램코드 컬랙션3개 파일입출력 코드 사용 
-![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/615b599b-3cc1-483e-b065-2566c90ca4db)
+![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/955f18d1-d539-4a00-a945-f4dba218ab60)
 >### saveCredentials(String 아이디, String 비번): 로그인 정보를 properties 파일에 저장
 >### tryAutoLogin(Scanner): 자동 로그인 시도, 파일에 저장된 로그인 정보를 읽고 사용자가 입력한 아이디와 비밀번호와 비교
 >### saveResponse(Map<String, String> responseMap): 설문 응답을 파일에 저장, 각 항목은 Map으로 저장되어 하나의 파일에 추가됩니다
@@ -39,17 +39,17 @@
 > > >### Properties: 로그인 정보를 저장하고 불러오는데 사용
 > > >### Map<String>: 설문 응답을 저장하는 자료구조
 # 중간고사 계산기 활용 설문조사 내용 코드
-![image](https://github.com/user-attachments/assets/e53ca683-27f4-40ed-a42b-2bf23a150f93)
+![스크린샷 2024-12-25 105717](https://github.com/user-attachments/assets/9dee3481-a492-467d-87e8-b80e1c21a19f)
 >**본 사진은 프로그램코드를 실행하면 나오는사진입니다**
-![KakaoTalk_20241224_153450843](https://github.com/user-attachments/assets/7bc34466-8598-47c5-86a7-5bd8f9900205)
+![KakaoTalk_20241224_153450843](https://github.com/user-attachments/assets/db2be244-bb74-4639-912f-ff4d36ba9507)
 >**위의 사진은 설명하기위해 그려놓은 사진입니다 참고만 해주시길 바랍니다**
 > > # 보시다시피 먼저 TextArea 에 작성할내용을 입력합니다
 > > ## 작성방법이 ButtonclickListener인 6개의 버튼이 있고 TextArea에 키보드로 내용을 작성할수 있습니다.
 > > > ### 여기서 버튼을 추가한이유는 2,3번문제는 객관식으로 답을 받기가 적절하여 버튼을 만들었습니다.(객관식으로 받아야 그래프 분석하기가 편함)
 > > > > ####  TextArea에 작생한내용을 메뉴Bar로 파일저장하기 하여 택스트 파일로 내보내기가 가능합니다.
 # 설문조사 해결방법 주차장 자리 현황판 코드
-![스크린샷 2024-12-24 155917](https://github.com/user-attachments/assets/0581b957-7ca5-4492-89ca-50260675fd61)
-![스크린샷 2024-12-24 155847](https://github.com/user-attachments/assets/5bad64c5-b5b6-4640-ba5c-1c6f8326758c)
+![스크린샷 2024-12-24 155917](https://github.com/user-attachments/assets/3649a45a-73cb-4e9b-a81e-d3e5526015c9)
+![스크린샷 2024-12-24 155847](https://github.com/user-attachments/assets/eb165b07-b826-467a-9050-05eb10c2f875)
 > # Total_spacses: 주차장 총 공간수, OccupidSpaces:현재 주차된 자리수, AvailableSpaces:비어있는 주차 공간 수
 > > ## simulateParking(): 주차 공간의 상태를 시뮬레이션.
 > > > ## Random random = new Random();을 사용하여 랜덤 객체를 생성.
