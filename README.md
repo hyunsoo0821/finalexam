@@ -1,6 +1,6 @@
 # 1.개요
 ## 1.1 목적, 주제선정이유(기초 틀) 
-![기말고사 설계 (4)](https://github.com/user-attachments/assets/7930a64a-b9fb-42a2-8cd0-08bcad415990)
+![기말고사 설계 (5)](https://github.com/user-attachments/assets/4edb582d-fd41-473e-8fd1-c4c25db2cc77)
 >**먼저 설문조사 양식을 여러 사이트를 보고 참고하여 만들었습니다**
 > >## 그중 구글폼을 참고하여 설문조사코드를 만들어 보았으며 
 > > >### 중간고사 계산기코드를 참고하여 만든 설문조사코드도 만들어 보았습니다.
