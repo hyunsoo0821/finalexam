@@ -2,7 +2,6 @@ package finalexam;
 
 import java.io.*;
 import java.util.*;
-
 public class finalexam3 {
     public static void main(String[] args) {
         String input = "C:\\Users\\ASUS\\OneDrive - 청주대학교\\바탕 화면\\survey_responses.txt";

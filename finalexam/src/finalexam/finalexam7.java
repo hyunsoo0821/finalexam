@@ -54,7 +54,6 @@ public class finalexam7 {
         summarizeResponses();
     }
 
-
     private static void saveCredentials(String username, String password) {
         Properties properties = new Properties();
         properties.setProperty("username", username);

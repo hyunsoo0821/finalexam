@@ -31,7 +31,6 @@ public class finalexam1 {
             e.printStackTrace();
         }
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

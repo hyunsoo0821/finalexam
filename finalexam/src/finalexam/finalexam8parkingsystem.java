@@ -24,7 +24,6 @@ public class finalexam8parkingsystem {
         this.occupiedSpaces = random.nextInt(TOTAL_SPACES + 1);
         this.availableSpaces = TOTAL_SPACES - occupiedSpaces;
     }
-
     private void displayParkingStatus() {
         Map<Integer, String> parkingSpaces = new HashMap<>();
         for (int i = 1; i <= TOTAL_SPACES; i++) {

@@ -86,7 +86,6 @@ public class finalexam6 {
         }
     }
 
-
     private static String summarizeResponse(String response) {
         String[] words = response.split(" ");
         if (words.length <= 10) {
