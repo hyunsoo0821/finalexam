@@ -1,4 +1,4 @@
-package finalexam;
+package midtermfinalexam;
 
 import javax.swing.*;
 import java.awt.*;

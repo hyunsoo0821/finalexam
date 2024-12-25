@@ -1,4 +1,4 @@
-package finalexam;
+package midtermfinalexam;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +7,31 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
 
+/**
+ * @see  * menu BAr 기능
+ * @see * 파일 입출력 클래스
+ *  *버튼클릭리스너 기능추가
+ *  Action Evant 클래스
+ *  BufferedWriter를 사용하여 데이터를 파일에 저장
+ *
+ * @author cho hyun soo(hyunsoo821cho@gmail.com)
+ *  @version 24.2.3
+ *  @since 24.10.8
+ *
+ * @created 2024-12-20
+ * @lastModified 2024-12-25
+ *
+ * @changelog
+ * <ul>
+ *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+ *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+ *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+ *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+ * </ul>
+ */
 public class finalexam5 extends JFrame {
     JTextArea genderField, issueSummaryField, issueDetailField, solutionField;
     JTextArea focusedField, nameField;;
@@ -25,6 +49,27 @@ public class finalexam5 extends JFrame {
         setSize(400, 500);
         setVisible(true);
     }
+    /**
+     * setLayout(new BorderLayout(10, 10)); 10은 간격 레이아웃을 의미합니다.
+     * makeMenu(): 메뉴 바를 만드는 클래스
+     * showNorth(): 설문조사를 위한 텍스트 필드들을 상단에 배치하는 클래스
+     * showSouth(): 버튼들을 하단에 배치하는 클래스
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     void makeMenu() {
         JMenuBar menuBar = new JMenuBar();
@@ -64,6 +109,28 @@ public class finalexam5 extends JFrame {
         menuBar.add(fileMenu);
         setJMenuBar(menuBar);
     }
+    /**
+     * MenBar 클래스
+     * MenuBar 파일 저장->Action Listener사용
+     * MenuBar 새파일 생성기
+     * MenuBar exit 종료
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
+
 
     void saveToFile() {
         JFileChooser fileChooser = new JFileChooser();
@@ -86,6 +153,25 @@ public class finalexam5 extends JFrame {
             }
         }
     }
+    /**
+     * saveToFile() 메서드는 사용자가 입력한 데이터를 파일에 저장하는 기능
+     * JFileChooser를 사용해 파일 경로를 선택
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     void showNorth() {
         JPanel p1 = new JPanel();
@@ -130,6 +216,29 @@ public class finalexam5 extends JFrame {
 
         this.add(p1, BorderLayout.NORTH);
     }
+    /**
+     * JtextArea:버튼, 키보드 입력 추가
+     * solutionField: 해결 방안을 입력하는 JTextArea입니다
+     * issueDetailField: 불편 사항의 상세 설명을 입력하는 JTextArea
+     * issueSummaryField: 불편 사항을 요약하여 입력하는 JTextArea입니다
+     * genderField: 사용자가 성별을 입력할 수 있는 JTextArea입니다.
+     * nameField: 사용자가 이름을 입력할 수 있는 JTextArea입니다
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     void showSouth() {
         JPanel panel = new JPanel();
@@ -143,6 +252,7 @@ public class finalexam5 extends JFrame {
                 "주차장 자리 문제", "길가 문제", "뜨거운물 사용", "교내 셔틀 전광판 문제"
         };
 
+
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setBackground(Color.GRAY);
@@ -153,6 +263,26 @@ public class finalexam5 extends JFrame {
         panel.add(buttonPanel);
         this.add(panel, BorderLayout.SOUTH);
     }
+    /**
+     * GridLayout을 사용하여 5개의 행과 4개의 열로 구성된 격자 형식의 레이아웃
+     * JButton -> Buttonclick Listener 6개 버튼 추가
+     * 버튼들 배경 회색
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     class ButtonClickListener implements ActionListener {
         @Override
@@ -165,6 +295,26 @@ public class finalexam5 extends JFrame {
             }
         }
     }
+    /**
+     * 버튼이 클릭되면 actionPerformed() 메서드가 호출되고, 클릭된 버튼의 텍스트가 현재 포커스된 텍스트 필드에 추가
+     * JfocusedField가 null인 경우에는 아무 동작도 수행되지 않으므로, 텍스트가 추가되지 않습니다.
+     * Button clickListener 클래스
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     class FocusListener implements java.awt.event.FocusListener {
         @Override
@@ -177,6 +327,27 @@ public class finalexam5 extends JFrame {
 
         }
     }
+    /**
+     * FocusListener 클래스는 포커스가 변화하는 이벤트를 처리->현재 포커스된 텍스트 필드를 추적하는 역할
+     * focusGained: 컴포넌트가 포커스를 받으면  focusedField 변수에 저장
+     * focusLost: 포커스를 잃으면 삭제
+     * focus=사용자가 입력하거나 행동하는거
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 2번,3번 버튼 추가(cho hyun soo)</li>
+     *   <li>2023-12-23: TextArea 기능 추가(cho hyun soo)</li>
+     *   <li>2024-12-24: Focusfield 기능추가 (cho hyun soo)</li>
+     * </ul>
+     */
 
     public static void main(String[] args) {
         new finalexam5();
