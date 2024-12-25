@@ -72,8 +72,6 @@ public class finalexam6 {
             while ((line = reader.readLine()) != null) {
                 responses.add(line);
             }
-
-
             for (String response : responses) {
                 String summary = summarizeResponse(response);
                 writer.write(summary);

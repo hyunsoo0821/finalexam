@@ -2,6 +2,28 @@ package finalexam;
 
 import java.io.*;
 import java.util.*;
+/**
+ * @see  Scanner 문
+ * @see Map, HashMap 키와 값을 저장하는 자료구조
+ *  *파일 입출력및 컬렉션 프레임워크 클래스입니다.
+ *
+ * @author cho hyun soo(hyunsoo821cho@gmail.com)
+ *  @version 24.2.3
+ *  @since 24.10.8
+ *
+ * @created 2024-12-20
+ * @lastModified 2024-12-25
+ *
+ * @changelog
+ * <ul>
+ *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+ *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+ *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+ *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+ *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+ * </ul>
+ */
+
 
 public class finalexam7 {
 
@@ -23,6 +45,28 @@ public class finalexam7 {
 
             saveCredentials(username, password);
         }
+        /**
+         * @see  tryAutoLogin(scanner): 이 메서드는 자동 로그인 시도 클래스
+         * @see credentials.properties 파일에서 저장된 아이디와 비밀번호를 읽는 클래스
+         * @see saveCredentials(아이디, 비번) 메서드를 통해 입력된 로그인 정보는 credentials.properties 파일에 저장 클래스
+         *  *자동 로그인, properties파일에 설문조사 응답내용 저장 클래스입니다.
+         *
+         * @author cho hyun soo(hyunsoo821cho@gmail.com)
+         *  @version 24.2.3
+         *  @since 24.10.8
+         *
+         * @created 2024-12-20
+         * @lastModified 2024-12-25
+         *
+         * @changelog
+         * <ul>
+         *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+         *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+         *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+         *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+         *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+         * </ul>
+         */
 
 
         Map<String, String> responseMap = new LinkedHashMap<>();
@@ -53,6 +97,27 @@ public class finalexam7 {
 
         summarizeResponses();
     }
+    /**
+     * *@see (solution,details,inconvenience,gender,name)->map의 객체
+     * * @see ResponseMap 에 저장된 설문 응답을 saveResponse() 메서드를 통해 저장
+     *  * 이름, 성별, 불편했던 점, 상세 설명, 해결 방안 등을 입력하고, 그 응답은 LinkedHashMap에 순서대로 저장
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+     *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+     *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+     *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+     * </ul>
+     */
     private static void saveCredentials(String username, String password) {
         Properties properties = new Properties();
         properties.setProperty("username", username);
@@ -64,6 +129,29 @@ public class finalexam7 {
             e.printStackTrace();
         }
     }
+    /**
+     * @see * properties 파일에 저장하는 클래스
+     * @see * setProperty() 메서드를 사용하여 username과 password
+     * @see *CREDENTIALS_FILE은 로그인 정보를 저장할 파일의 경로
+     * @see *BufferedWriter는 출력 스트림을 버퍼링하여 성능을 향상시키는 역할
+     * @see *FileWriter는 파일에 데이터를 쓰는 역할
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+     *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+     *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+     *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+     * </ul>
+     */
 
 
     private static boolean tryAutoLogin(Scanner scanner) {
@@ -95,6 +183,27 @@ public class finalexam7 {
             return false;
         }
     }
+    /**
+     * @see  *credentials.properties 파일에 저장된 아이디와 비밀번호 저장
+     * @see  *일치하면 로그인 성공, 일치하지 않으면 로그인 실패로 처리
+     *
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+     *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+     *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+     *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+     * </ul>
+     */
 
 
     private static void saveResponse(Map<String, String> responseMap) {
@@ -112,6 +221,26 @@ public class finalexam7 {
             e.printStackTrace();
         }
     }
+    /**
+     * @see  *설문 응답을 Map에 저장한 후, 이를 텍스트 파일 내보내기 저장,"key: value"
+     * @see * 파일 입출력 처리 코드
+     *
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+     *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+     *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+     *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+     * </ul>
+     */
 
 
     private static void summarizeResponses() {
@@ -139,6 +268,27 @@ public class finalexam7 {
             e.printStackTrace();
         }
     }
+    /**
+     * 설문 응답 요약을 파일에 저장하는 메서드, 각 응답을 요약한 후 택스트파일 내보내기
+     * @see  *BufferedReader는 입력 스트림을 버퍼링하여 성능을 향상, FileInputStream은 파일을 읽는 스트림
+     * @see *InputStreamReader는 바이트 스트림을 문자 스트림으로 변환, "UTF-8" 인코딩을 사용
+     * @sww *BufferedWriter는 출력 스트림을 버퍼링, FileOutputStream은 출력 파일에 데이터 작성
+     * @author cho hyun soo(hyunsoo821cho@gmail.com)
+     *  @version 24.2.3
+     *  @since 24.10.8
+     *
+     * @created 2024-12-20
+     * @lastModified 2024-12-25
+     *
+     * @changelog
+     * <ul>
+     *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+     *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+     *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+     *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+     *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+     * </ul>
+     */
 
 
     private static String summarizeResponse(String response) {
@@ -154,3 +304,24 @@ public class finalexam7 {
         return summary.toString().trim();
     }
 }
+/**
+ * response.split(" ")는 공백을 기준으로 응답을 단어별로 나누어 배열에 저장
+ * summary.toString()은 StringBuilder에 추가된 모든 내용을 문자열로 변환
+ * 주어진 긴 응답을 요약하여, 첫 10단어만 포함하고 그 뒤는 "..."으로 표시하는 방식으로 동작합니다
+ *
+ * @author cho hyun soo(hyunsoo821cho@gmail.com)
+ *  @version 24.2.3
+ *  @since 24.10.8
+ *
+ * @created 2024-12-20
+ * @lastModified 2024-12-25
+ *
+ * @changelog
+ * <ul>
+ *   <li>2024-12-20: 최초 생성 (cho hyun soo)</li>
+ *   <li>2024-12-22: 설문조사 내용 작성(cho hyun soo)</li>
+ *   <li>2023-12-23: 파일 입출력 처리 기늩추가 및 설문조사 내용 요약 기능추가(cho hyun soo)</li>
+ *   <li>2024-12-24: 자동로그인 기능추가 (cho hyun soo)</li>
+ *    <li>2024-12-25: 컬렉션 프레임워크 및 파일입출력 최종 요약후 정리 작성 (cho hyun soo)</li>
+ * </ul>
+ */

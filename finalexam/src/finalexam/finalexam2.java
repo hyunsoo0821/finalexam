@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class finalexam2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-
         StringBuilder responseBuilder = new StringBuilder();
 
         System.out.println("이름: ");

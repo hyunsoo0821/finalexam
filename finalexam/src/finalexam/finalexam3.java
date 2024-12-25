@@ -19,7 +19,6 @@ public class finalexam3 {
                 responses.add(line);
             }
 
-
             for (String response : responses) {
                 String summary = summarizeResponse(response);
                 writer.write(summary);
