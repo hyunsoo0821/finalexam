@@ -30,7 +30,7 @@
 # 기말고사 내용 활용 프로그램코드 컬랙션3개 파일입출력 코드 사용 
 ![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/615b599b-3cc1-483e-b065-2566c90ca4db)
 >### saveCredentials(String 아이디, String 비번): 로그인 정보를 properties 파일에 저장
->## tryAutoLogin(Scanner): 자동 로그인 시도, 파일에 저장된 로그인 정보를 읽고 사용자가 입력한 아이디와 비밀번호와 비교
+>### tryAutoLogin(Scanner): 자동 로그인 시도, 파일에 저장된 로그인 정보를 읽고 사용자가 입력한 아이디와 비밀번호와 비교
 >### saveResponse(Map<String, String> responseMap): 설문 응답을 파일에 저장, 각 항목은 Map으로 저장되어 하나의 파일에 추가됩니다
 >### summarizeResponse(String response):설문 응답을 요약하여 새로운 파일에 저장합니다, 개별 응답을 요약하는 함수로, 응답이 10단어를 넘으면 첫 10단어를 출력하고 ...을 뒤에 붙이게 했습니다.(첫문장을 요약한문장을 쓰게 했습니다)
 > > ## 주요 클래스 및 매서드
