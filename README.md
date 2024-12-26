@@ -1,6 +1,6 @@
 # 1.개요
 ## 1.1 목적, 주제선정이유(기초 틀) 
-![기말고사 설계 (9)](https://github.com/user-attachments/assets/f9222407-1d6d-4730-865a-ce34f9ca6dc8)
+![기말고사 설계 (10)](https://github.com/user-attachments/assets/8d430103-74af-4b78-a23b-c41c464954e3)
 >**먼저 설문조사 양식을 여러 사이트를 보고 참고하여 만들었습니다**
 > >## 그중 구글폼을 참고하여 설문조사코드를 만들어 보았으며 
 > > >### 중간고사 계산기코드를 참고하여 만든 설문조사코드도 만들어 보았습니다.
@@ -26,7 +26,7 @@
 ![프로그램 클래스다이어그램 (9)](https://github.com/user-attachments/assets/230569ce-2dff-4593-b3e4-b3d80ae6ca15)
 ># 아래 사진은 설문조사 결과 해결방법으로 주차장자리현황판 코드입니다 
 ![제목 없는 다이어그램](https://github.com/user-attachments/assets/446f51e3-2d47-4ccc-bc8b-0d7a7e2544ba)
-> # 이미지가 안보이신다면 위에 파일을 올려놨으니 프로그램 클래스 다이어그램 이미지 파일을 누르시고 보시면 됩니다.
+> # 이미지가 안보이신다면 위에 파일을 올려놨으니 클래스 다이어그램 이미지 파일을 누르시고 보시면 됩니다.
 # 3.3 프로그램 절차
 # 기말고사 내용 활용 프로그램코드 컬랙션3개 파일입출력 코드 사용 
 ![력크컬레셩프레임워크 컬렉션3개 파일입출력 2개 USER_CREDENTIALS_FILE1개 사용](https://github.com/user-attachments/assets/955f18d1-d539-4a00-a945-f4dba218ab60)
